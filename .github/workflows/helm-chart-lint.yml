@@ -1,0 +1,24 @@
+name: Helm Chart Validation
+
+on:
+  push:
+    paths:
+      - 'build/charts/**'
+
+jobs:
+  validate-helm-chart:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Helm
+      uses: azure/setup-helm@v1
+      with:
+        version: 'v3.7.0'
+
+    - name: Validate Helm Chart
+      run: |
+        cd build/charts/
+        helm lint .
+        helm install --dry-run my-release .
