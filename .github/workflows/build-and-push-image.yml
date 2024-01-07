@@ -9,7 +9,7 @@ on:
       - 'main'
 
 env: 
-  PROJECT_NAME: Daemonset-Installer
+  PROJECT_NAME: daemonset-installer
 
 jobs:
   docker:
