@@ -22,3 +22,4 @@ jobs:
         cd build/charts/
         helm lint .
         helm install --dry-run my-release .
+        helm template . --dry-run
