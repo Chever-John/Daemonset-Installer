@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'build/charts/**'
+      - '.github/workflows/helm-chart-validation.yml'
 
 jobs:
   validate-helm-chart:
