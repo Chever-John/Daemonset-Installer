@@ -11,3 +11,5 @@ RUN yum update -y && \
       yum install -y netperf && \
       yum install -y hping3 traceroute tcpdump && \
       yum clean all
+
+RUN echo "hello chever" > /etc/hello-chever/hello.txt
