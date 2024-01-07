@@ -7,8 +7,8 @@ on:
 
 env: 
   PROJECT_NAME: daemonset-installer
-  TAG: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
-
+  # set TAG by the command "echo "::set-output name=sha_short::$(git rev-parse --short HEAD)""
+  TAG: ${{ github.event.pull_request.head.sha_short }}
 jobs:
   docker:
     runs-on: ubuntu-latest
