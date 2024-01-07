@@ -1,6 +1,9 @@
 name: build-and-push-image
 
 on:
+  push:
+    paths:
+      - 'build/images/**'
   pull_request:
     branches:
       - 'main'
